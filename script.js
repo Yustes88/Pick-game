@@ -24,6 +24,15 @@ const init = () => {
     diceEl.classList.add('hidden')
 
     player0.classList.add('player--active');
+    player1.classList.remove('player--active');
+    player0.classList.remove('player--winner');
+    player1.classList.remove('player--winner')
+
+    score0EL.textContent = 0;
+    score1EL.textContent = 0;
+
+    currentScore0EL.textContent = 0;
+    currentScore1EL.textContent = 0;
 }
 
 init()
@@ -54,3 +63,25 @@ const onBtnRollCLick = () => {
 }
 
 onBtnRollCLick()
+
+const onBtnHoldClick = () => {
+    btnHold.addEventListener('click', function() {
+        if(playing) {
+            score[activePlayer] += currScore;
+            document.querySelector(`#score--${activePlayer}`).textContent = score[activePlayer];
+            if(score[activePlayer] >= 20) {
+                playing = false;
+                document.querySelector(`.player--${activePlayer}`).classList.add('player--winner')
+                document.querySelector(`.player--${activePlayer}`).classList.remove('player--active')
+
+            } else {
+                switchPlayer()
+            }
+        }
+    })
+}
+
+onBtnHoldClick()
+
+btnNew.addEventListener('click', init)
+
