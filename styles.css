@@ -23,21 +23,125 @@ body {
     background-color: rgba(255, 255, 255, 0.6);
     width: 100rem;
     height: 60rem;
+    box-shadow: 0 5rem 5rem rgba(0, 0, 0, 0.4);
     position: relative;
     display: flex;
+    overflow: hidden;
+    transition: all 0.8s;
 }
 
 .player {
     display: flex;
     flex-direction: column;
     flex: 50;
+    padding: 9rem;
+    align-items: center;
+}
+
+.title {
+    position: relative;
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.score {
+    font-size: 6rem;
+    font-weight: 400;
+    color: #c7365f;
+    margin-bottom: auto;
+}
+
+.current {
+    background-color: #c7365f;
+    text-transform: uppercase;
+    opacity: 0.8;
+    color: white;
+    text-align: center;
+    width: 65%;
+    padding: 2rem;
+    border-radius: 9px;
+}
+
+.current-label {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.current-score {
+    font-size: 3rem;
 }
 
 .dice {
     position: absolute;
     width: 10rem;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .btn {
     position: absolute;
+    background: none;
+    font-family: inherit;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border-radius: 50rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.7);
+    left: 50%;
+    box-shadow: 0 1.75rem 3.5rem rgb(0 0 0 / 10%);
+    transform: translate(-50%);
+    cursor: pointer;
+    transition: all 0.2s;
 }
+
+.btn--new {
+    top: 4rem
+}
+
+.btn--roll {
+    top: 39rem
+}
+.btn--hold {
+    top: 45rem
+}
+
+.btn:active{
+    transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.player--active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+.player--active .title {
+    font-weight: 700;
+  }
+
+.player--active .score {
+    font-weight: 400;
+  }
+
+  .player--active .current {
+    opacity: 1;
+  }
+
+  .player--winner {
+    background-color: #2f2f2f;
+  }
+  
+  .player--winner .title {
+    font-weight: 700;
+    color: #c7365f;
+  }
+  
+  .hidden {
+    display: none;
+  }
