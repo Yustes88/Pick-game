@@ -13,9 +13,31 @@ body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100rem;
+    height: 60rem;
+    position: relative;
+    display: flex;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    flex: 50;
+}
+
+.dice {
+    position: absolute;
+    width: 10rem;
+}
+
+.btn {
+    position: absolute;
 }
